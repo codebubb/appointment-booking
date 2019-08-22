@@ -14,7 +14,7 @@ export class AppointmentService {
   constructor(private http: HttpClient) { }
 
   getAppointments(): Observable<Appointment[]> {
-    return this.http.get<Appointment[]>(`${this.BASE_URL}/appointments`)
+    return this.http.get<Appointment[]>(`${this.BASE_URL}/appointments`);
   }
 
   createAppointment(appointmentDate: string, name: string, email: string): Observable<Appointment> {
