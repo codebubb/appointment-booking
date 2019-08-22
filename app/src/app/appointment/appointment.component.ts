@@ -9,7 +9,6 @@ import { Appointment } from '../Appointment';
 })
 export class AppointmentComponent implements OnInit {
 
-  public loading = false;
   public successMsg: string;
   public errorMsg: string;
   appointmentDate: string;
@@ -22,18 +21,17 @@ export class AppointmentComponent implements OnInit {
   }
 
   createAppointment() {
-    this.loading = true;
     this.successMsg = '';
     this.errorMsg = '';
     this.appointmentService.createAppointment(this.appointmentDate, this.name, this.email)
       .subscribe((createdAppointment: Appointment) => {
-        this.loading = false;
+        this.appointmentDate = '';
+        this.name = '';
+        this.email = '';
         const appointmentDate = new Date(createdAppointment.appointmentDate).toDateString();
-
         this.successMsg = `Appointment Booked Successfully for ${appointmentDate}`;
       },
       (error: ErrorEvent) => {
-        this.loading = false;
         this.errorMsg = error.error.message;
       });
   }
