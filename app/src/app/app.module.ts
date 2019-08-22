@@ -8,8 +8,17 @@ import { HomeComponent } from './home/home.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatTableModule, MatProgressSpinnerModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatDatepickerModule, MatNativeDateModule, MatToolbarModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import {
+  MatTableModule,
+  MatProgressSpinnerModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatToolbarModule,
+} from '@angular/material';
 
 @NgModule({
   declarations: [
