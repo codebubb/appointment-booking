@@ -20,8 +20,8 @@ export class AppointmentService {
   createAppointment(appointmentDate: string, name: string, email: string): Observable<Appointment> {
     return this.http.post<Appointment>(`${this.BASE_URL}/appointments`, { appointmentDate, name, email });
   }
-  
-  cancelAppointment(_id: string): Observable<any> {
-    return this.http.delete(`${this.BASE_URL}/appointments/${_id}`);
+
+  cancelAppointment(id: string): Observable<any> {
+    return this.http.delete(`${this.BASE_URL}/appointments/${id}`);
   }
 }
